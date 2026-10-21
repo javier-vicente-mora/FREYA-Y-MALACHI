@@ -1,0 +1,290 @@
+/* ==========================================
+   ESTILOS GENERALES Y TEMA DISNEY (PURPLE / NEON)
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(30, 27, 75, 0.8);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border: 2px solid #a855f7;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f3e8ff;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    width: 95%;
+    margin: 30px auto;
+}
+
+/* ==========================================
+   ROSCO CIRCULAR
+   ========================================== */
+.rosco-container {
+    position: relative;
+    width: 460px;
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rosco {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.letter-circle {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #0284c7;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.letter-circle.active {
+    background-color: #f59e0b;
+    transform: scale(1.25);
+    z-index: 10;
+    box-shadow: 0 0 15px #fef08a;
+}
+
+.letter-circle.correct { background-color: #10b981; }
+.letter-circle.error { background-color: #ef4444; }
+
+.center-image-container {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #a855f7;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background-color: #1e1b4b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+/* ==========================================
+   PANEL DERECHO DE JUEGO
+   ========================================== */
+.panel-container {
+    flex: 1;
+    min-width: 320px;
+    max-width: 500px;
+    background: rgba(30, 27, 75, 0.85);
+    backdrop-filter: blur(8px);
+    border: 2px solid #a855f7;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Controles superiores centrados */
+.top-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.music-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(168, 85, 247, 0.5);
+}
+
+.music-selector label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #e9d5ff;
+}
+
+.music-selector select {
+    background-color: #312e81;
+    color: #ffffff;
+    border: 1px solid #a855f7;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.85rem;
+}
+
+/* Marcadores */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.score-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.score-box span {
+    display: block;
+    font-size: 0.75rem;
+    color: #e9d5ff;
+    font-weight: bold;
+}
+
+.score-box strong { font-size: 1.5rem; }
+.score-box.hits strong { color: #34d399; }
+.score-box.errors strong { color: #f87171; }
+
+/* Caja de pregunta */
+.definition-box {
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 20px;
+    border-radius: 15px;
+    min-height: 140px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.definition-box h2 {
+    color: #6b21a8;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.definition-box p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Entrada e Inputs */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#user-input {
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid #a855f7;
+    font-size: 1.1rem;
+    outline: none;
+    text-transform: uppercase;
+}
+
+#user-input:focus {
+    border-color: #f59e0b;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-check { background-color: #10b981; color: white; }
+.btn-check:hover { background-color: #059669; }
+
+.btn-pasapalabra { background-color: #f59e0b; color: white; }
+.btn-pasapalabra:hover { background-color: #d97706; }
+
+/* Modal Final */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal.hidden { display: none; }
+
+.modal-content {
+    background-color: #ffffff;
+    color: #1e1b4b;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border: 4px solid #a855f7;
+}
+
+.modal-content h2 { margin-bottom: 15px; }
+.modal-content p { margin-bottom: 20px; font-size: 1.1rem; }
+
+.btn-restart { background-color: #6b21a8; color: white; width: 100%; }
+.btn-restart:hover { background-color: #581c87; }

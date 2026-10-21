@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasapalabra: Freya Skye y Malachi</title>
+    
+    <!-- Etiquetas para compartir -->
+    <meta property="og:title" content="Pasapalabra: Freya Skye y Malachi Barton">
+    <meta property="og:description" content="Juego interactivo de preguntas y respuestas sobre Freya Skye y Malachi Barton.">
+    <meta property="og:image" content="https://javier-vicente-mora.github.io/FREYA-Y-MALACHI/Foto.png">
+    <meta property="og:url" content="https://javier-vicente-mora.github.io/FREYA-Y-MALACHI/">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>PASAPALABRA: FREYA SKYE Y MALACHI BARTON</h1>
+    </header>
+
+    <main class="game-container">
+        <!-- LADO IZQUIERDO: Rosco circular de letras -->
+        <div class="rosco-container">
+            <div id="rosco" class="rosco"></div>
+            <!-- Foto en el centro del rosco -->
+            <div class="center-image-container">
+                <img id="center-photo" src="Foto.png" alt="Freya y Malachi" class="center-photo">
+            </div>
+        </div>
+
+        <!-- LADO DERECHO: Panel de preguntas y control -->
+        <div class="panel-container">
+            <!-- Control de Música Centrado -->
+            <div class="top-controls">
+                <div class="music-selector">
+                    <label for="music-select">🎵 MÚSICA:</label>
+                    <select id="music-select">
+                        <option value="off" selected>OFF</option>
+                        <option value="musica.mp3">Golden Boy</option>
+                        <option value="musica2.mp3">Bad Taste</option>
+                        <option value="musica3.mp3">Dream Come True</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <div class="scoreboard">
+                <div class="score-box hits">
+                    <span>ACIERTOS</span>
+                    <strong id="hits-count">0</strong>
+                </div>
+                <div class="score-box errors">
+                    <span>FALLOS</span>
+                    <strong id="errors-count">0</strong>
+                </div>
+            </div>
+
+            <!-- Caja de la pregunta actual -->
+            <div class="definition-box">
+                <h2 id="letter-title">CONTIENE LA A</h2>
+                <p id="definition-text">Cargando pregunta...</p>
+            </div>
+
+            <!-- Entrada de respuesta -->
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Escribe tu respuesta aquí..." autocomplete="off">
+                <div class="button-group">
+                    <button id="btn-submit" class="btn btn-check">Enviar</button>
+                    <button id="btn-pasapalabra" class="btn btn-pasapalabra">Pasapalabra</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Elemento de Audio de Fondo -->
+    <audio id="bg-music" loop></audio>
+
+    <!-- Modal de Fin de Juego -->
+    <div id="end-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">¡Fin de la partida!</h2>
+            <p id="modal-message"></p>
+            <button id="btn-restart" class="btn btn-restart">Jugar de nuevo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
